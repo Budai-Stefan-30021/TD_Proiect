@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+  <title>Magazin Online Tv</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/vue-material.css" />
+  <script type="text/javascript" src="libs/vue.js"></script>
+  <script type="text/javascript" src="libs/vue-material.js"></script>
+  <script type="text/javascript" src="libs/axios.js"></script>
+  <script type="text/javascript" src="src/tvs-service.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="title">
+      <h1>Tv Store</h1>
+      <a :href="'add.html?'">ADD TV</a>
+    </div>
+
+
+    <p style="text-align: center" v-if="televizoare.length == 0">No cars found</p>
+
+    <ul class="user-list" v-if="televizoare.length > 0">
+      <li>
+        <div class="user-row-header">
+          <div class="user-name">TV Stock</div>
+
+        </div>
+      </li>
+
+      <li v-for="televizor in televizoare">
+        <div class="">
+          <div class="user-name"><br>Name</div>
+
+          <div><a :href="'details.html?id='+televizor.id"> <br>{{ televizor.name }}</a></div>
+
+
+          <div class="user-city"><br>Tip TV </div>
+          <p class=""><i>{{ televizor.tipTV }}</i></p>
+
+          <div class="user-city">Tip Display</div>
+          <p class=""><i>{{ televizor.tipDisplay }}</i></p>
+
+          <div class="user-city">Procesor</div>
+          <p class=""><i>{{ televizor.procesor }}</i></p>
+
+          <div class="user-city">Diagonala</div>
+          <p class=""><i>{{ televizor.diagonala }}</i></p>
+
+          <div class="user-city">Pret</div>
+          <p class=""><i>{{ televizor.pret }}</i></p><br>
+
+
+          <button v-on:click="deleteTelevizor(televizor.id)">Delete</button>
+
+          <a :href="'update.html?id='+televizor.id" target="_self">Update</a>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script src="src/app.js"></script>
+</body>
+
+</html>

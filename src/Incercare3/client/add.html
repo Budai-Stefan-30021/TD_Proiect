@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+</head>
+<body>
+<a href="index.html">Home</a>
+<div id="add">
+    Name: <input type="text" v-model="televizor.name" />
+    Tip Tv: <input type="text" v-model="televizor.tipTV" />
+    Procesor: <input type="text" v-model="televizor.procesor" />
+    Tip Display: <input type="text" v-model="televizor.tipDisplay" />
+    Diagonala: <input type="text" v-model="televizor.diagonala" />
+    Unghi De Vizualizare Grade: <input type="text" v-model="televizor.unghiDeVizualizareGrade" />
+    Dimensiune Ecran Inch: <input type="text" v-model="televizor.dimensiuneEcranInch" />
+    Rezolutie: <input type="text" v-model="televizor.rezolutie" />
+    Procesare Imagine Hz: <input type="text" v-model="televizor.procesareImagineHz" />
+    Sistem Difuzoare: <input type="text" v-model="televizor.sistemDifuzoare" />
+    Conexiuni: <input type="text" v-model="televizor.conexiuni" />
+    Putere Consumata In Functiune W: <input type="text" v-model="televizor.putereConsumataInFunctiuneW" />
+    Pret: <input type="text" v-model="televizor.pret" />
+
+
+    <button v-on:click="add(televizor)">Save</button>
+    <p>{{message}}</p>
+</div>
+<script src="src/add.js"></script>
+</body>
+</html>
